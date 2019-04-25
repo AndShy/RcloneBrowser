@@ -78,6 +78,7 @@ MainWindow::MainWindow()
                 R"(<p>Copyright &copy; 2017 Martins Mozeiko</p>)"
                 R"(<p>E-mail: <a href="mailto:martins.mozeiko@gmail.com">martins.mozeiko@gmail.com</a></p>)"
                 R"(<p>Web: <a href="https://mmozeiko.github.io/RcloneBrowser">https://mmozeiko.github.io/RcloneBrowser</a></p>)"
+				R"(<p><a href="https://github.com/DinCahill">https://github.com/DinCahill</a> v0.1.7 and <a href="https://github.com/AndShy">https://github.com/AndShy</a> edited 26.04.19</p>)"
             )
         );
     });

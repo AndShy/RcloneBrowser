@@ -66,7 +66,7 @@ TransferDialog::TransferDialog(bool isDownload, const QString& remote, const QDi
         if (!folder.isEmpty())
         {
             ui.textSource->setText(QDir::toNativeSeparators(folder));
-            ui.textDest->setText(remote + ":" + path.filePath(QFileInfo(folder).fileName()));
+			ui.textDest->setText(remote + ":" + path.filePath(QFileInfo(folder).fileName()));
         }
     });
     
@@ -95,7 +95,22 @@ TransferDialog::TransferDialog(bool isDownload, const QString& remote, const QDi
     ui.buttonSourceFolder->setVisible(!isDownload);
     ui.buttonDest->setVisible(isDownload);
 
-    (isDownload ? ui.textSource : ui.textDest)->setText(remote + ":" + path.path());
+    //(isDownload ? ui.textSource : ui.textDest)->setText(remote + ":" + path.path());
+
+	if (isDownload) {
+		ui.textSource->setText(remote + ":" + path.path());
+	}
+	else
+	{	
+		if (path.path() == ".") {
+			ui.textDest->setText(remote + ":");
+		}
+		else
+		{
+			ui.textDest->setText(remote + ":" + path.path());
+		}
+		
+	}
 }
 
 TransferDialog::~TransferDialog()
